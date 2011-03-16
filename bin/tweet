@@ -1,0 +1,27 @@
+#!/bin/bash
+TWEET_PATH="${TWEET_PATH:-"$(dirname "$(dirname "$0")")"}"
+TWEETRC="${TWEETRC:-$HOME/.tweetrc}"
+
+TWEET_CONSUMER_KEY=irSmHGa7IOVCiGkgaxBg1g
+TWEET_CONSUMER_SECRET=rsD0QkjUr5ZI8naifJfONI2HjP1fjAGccqIN8deXg
+
+. "$TWEET_PATH"/lib/tweet.sh
+. "$TWEETRC"
+
+mode="$1"; shift
+
+while [[ $# -gt 0 ]]; do
+  arg="$1"; shift
+
+  case "$arg" in
+    *)
+      if [[ -z "$message" ]]; then
+        message="$arg"
+      else
+        message="$message $arg"
+      fi
+    ;;
+  esac
+done
+
+tweet::"$mode"

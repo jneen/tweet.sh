@@ -1,0 +1,6 @@
+#!/bin/bash
+oauth::secret        rsD0QkjUr5ZI8naifJfONI2HjP1fjAGccqIN8deXg
+oauth::key           irSmHGa7IOVCiGkgaxBg1g
+oauth::request_url   https://api.twitter.com/oauth/request_token
+oauth::access_url    https://api.twitter.com/oauth/access_token
+oauth::authorize_url https://api.twitter.com/oauth/authorize
